@@ -23,7 +23,7 @@
 
 브루트포스이기 때문에 모든 경우의 수를 탐색하려면 어떻게 해야될지 생각했다.
 
-비교의 편의를 위해 미리 블랙, 화이트를 만들어 놓고, 두가지 경우의 수 모두 탐색했을 때의 최소값을 찾았다.
+for문을 사용하려면 범위가 주어져야하는데 10000번째 수의 범위를 정확하게 모르기 때문에 while문을 사용했고, index를 늘여가며 666이 연속으로 나오는지 확인하고, 몇번째 수인지 카운트했다.
 
 ```cpp
 
@@ -112,5 +112,5 @@ int main()
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzQ5NjgwODIsLTE3NzUwNzU2OF19
+eyJoaXN0b3J5IjpbLTc1MjUyMDgyNiwtMTc3NTA3NTY4XX0=
 -->
