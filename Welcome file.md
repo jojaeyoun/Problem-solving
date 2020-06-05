@@ -23,86 +23,55 @@
 
 브루트포스이기 때문에 모든 경우의 수를 탐색하려면 어떻게 해야될지 생각했다.
 
-for문을 사용하려면 범위가 주어져야하는데 10000번째 수의 범위를 정확하게 모르기 때문에 while문을 사용했고, index를 늘여가며 666이 연속으로 나오는지 확인하고, 몇번째 수인지 카운트했다.
+for문을 사용하려면 범위가 주어져야하는데 10000번째 수의 범위를 정확하게 모르기 때문에 while문을 사용했고, index를 늘여가며 666이 연속으로 나오는지 확인하고, 몇번째 수인지 카운트했다. 
 
 ```cpp
 
 #include <iostream>
-#include <string>
 #include <vector>
-#include <algorithm>
-
+#include <string>
 using namespace std;
-
-string white[8] =
-{
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW"
-};
-
-string black[8] =
-{
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB"
-};
-
 
 int main()
 {
-	int n, m;
-	cin >> m >> n;
-	vector<string> array;
-	vector<int> answer;
+	vector<int> array;
+	int number;
+	int index = 666;
 
-	for (int i = 0; i < m; i++)
-	{
-		string temp;
-		cin >> temp;
-		array.push_back(temp);
-	}
+	cin >> number;
 
-	for (int i = 0; i <= m - 8; i++)
+	while (1)
 	{
-		for (int j = 0; j <= n - 8; j++)
+		int count = 0;
+		int temp = index;
+		while (temp != 0)
 		{
-			int count = 0;
-			for (int y = 0; y < 8; y++)
-			{
-				for (int x = 0; x < 8; x++)
-				{
-					if (array[i + y][j + x] != white[y][x])
-						count++;
-				}
-			}
-			answer.push_back(count);
+			if (temp % 10 == 6)
+				count++;
+			else
+				count = 0;
 
-			count = 0;
-			for (int y = 0; y < 8; y++)
-			{
-				for (int x = 0; x < 8; x++)
-				{
-					if (array[i + y][j + x] != black[y][x])
-						count++;
-				}
-			}
-			answer.push_back(count);
-
+			if (count >= 3)
+				break;
+			else
+				temp /= 10;
 		}
 	
+		if (count >= 3)
+		{
+			array.push_back(index);
+		}
 
-	cout << *min_element(answer.begin(), answer.end());
+		if (array.size() == number)
+		{
+			cout << index;
+			break;
+		}
+		
+		index++;
+
+	}
+	
 }
 
 
@@ -112,5 +81,5 @@ int main()
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1MjUyMDgyNiwtMTc3NTA3NTY4XX0=
+eyJoaXN0b3J5IjpbLTEyNjM3OTMzMTUsLTE3NzUwNzU2OF19
 -->
