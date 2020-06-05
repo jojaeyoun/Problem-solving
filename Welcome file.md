@@ -16,7 +16,7 @@
 
 |입력| 첫째 줄에 숫자 N이 주어진다. N은 10,000보다 작거나 같은 자연수이다.
 |---|---|
-| 출력| 다시 칠해야 하는 정사각형 개수의 최솟값|
+| 출력| 첫째 줄에 N번째 영화의 제목에 들어간 수를 출력한다.
 
 
 ### 3. 구현
@@ -112,5 +112,5 @@ int main()
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDA5NDg5MDhdfQ==
+eyJoaXN0b3J5IjpbLTE3NzUwNzU2OF19
 -->
